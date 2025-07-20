@@ -3,11 +3,12 @@ const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const fs = require('node:fs');
 const path = require('node:path');
 
-// Dodajemy GuildMembers, żeby móc odczytywać liczbę członków
+// Dodajemy GuildMembers i GuildPresences, żeby móc odczytywać liczbę członków i ich statusy
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.GuildPresences,
   ],
 });
 

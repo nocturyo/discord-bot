@@ -8,9 +8,9 @@
   "dev": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Dairou",
+  "license": "GPL-3.0-only",
+  "description": "test discord bot // dairou",
   "dependencies": {
     "@discordjs/rest": "^2.5.1",
     "discord-api-types": "^0.38.16",

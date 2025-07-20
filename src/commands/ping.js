@@ -1,13 +1,19 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('ping')
-    .setDescription('Sprawdza opóźnienie bota!'),
+    .setDescription('Sprawdź opóźnienie bota'),
 
   async execute(interaction) {
-    const sent = await interaction.reply({ content: '🏓 Pinging...', fetchReply: true });
-    const latency = sent.createdTimestamp - interaction.createdTimestamp;
-    await interaction.editReply(`🏓 Opóźnienie: ${latency}ms`);
+    const latency = Date.now() - interaction.createdTimestamp;
+
+    const embed = new EmbedBuilder()
+      .setColor('#00bbf7')
+      .setTitle('🏓 Pong!')
+      .setDescription(`Opóźnienie bota to **${latency}ms**.`)
+      .setTimestamp();
+
+    await interaction.reply({ embeds: [embed] });
   },
 };

@@ -1,0 +1,7 @@
+Zarejestruj komendę ponownie:
+node deploy-commands.js
+ 
+Uruchom bota:
+npm run dev
+
+npm run dev
